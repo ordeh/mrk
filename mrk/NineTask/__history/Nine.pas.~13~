@@ -1,0 +1,118 @@
+unit Nine;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TFormNine = class(TForm)
+    EditInput: TEdit;
+    LabelInput: TLabel;
+    LabelList: TLabel;
+    LabelTitle: TLabel;
+    ListBoxEd: TListBox;
+    ButtonConvert: TButton;
+    ButtonHelp: TButton;
+    LabelResult: TLabel;
+    procedure ListBoxEdClick(Sender: TObject);
+    procedure EditInputKeyPress(Sender: TObject; var Key: Char);
+    procedure EditInputKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure FormCreate(Sender: TObject);
+    procedure ButtonHelpClick(Sender: TObject);
+    procedure ButtonConvertClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormNine: TFormNine;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormNine.ButtonConvertClick(Sender: TObject);
+var p, kg, k, k1, k2, k3, k4 : real;
+begin
+ case
+ ListBoxEd.ItemIndex of
+  0 :k1 := 2.54;
+  1 :k2 := 30.5;
+  2 :k3 := 91;
+  3 :k4 := 160900;
+end;
+ p := StrToFloat(EditInput.Text);
+ if ListBoxEd.ItemIndex = 0 then
+ begin
+     kg := p * k1;
+  LabelResult.Caption := EditInput.Text + ' дюймов = ' +
+ FloatToStr(kg) + ' см';
+ end;
+
+  if ListBoxEd.ItemIndex = 1 then
+  begin
+    kg := p * k2;
+  LabelResult.Caption := EditInput.Text + ' футов = ' +
+ FloatToStr(kg) + ' см';
+  end;
+
+   if ListBoxEd.ItemIndex = 2 then
+   begin
+       kg := p * k3;
+  LabelResult.Caption := EditInput.Text + ' €рдов = ' +
+ FloatToStr(kg) + ' см';
+      end;
+
+    if ListBoxEd.ItemIndex = 3 then
+    begin
+        kg := p * k4;
+ LabelResult.Caption := EditInput.Text + ' миль = ' +
+ FloatToStr(kg) + ' см';
+    end;
+
+ EditInput.SetFocus;
+end;
+
+procedure TFormNine.ButtonHelpClick(Sender: TObject);
+begin
+MessageDlg('ѕереводные единицы:' +#13#10#10+
+   '1 дюйм = 2,54 см; ' + #13#10 +
+   '1 фут = 30,5 см;' + #13#10 +
+   '1 €рд = 91 см;' + #13#10 +
+   '1 мил€ = 160 900 см. ',mtInformation,[mbOk],0);
+end;
+
+procedure TFormNine.EditInputKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if (ssAlt in Shift)and (Key = 88)then Close;
+end;
+
+procedure TFormNine.EditInputKeyPress(Sender: TObject; var Key: Char);
+begin
+   if not (Key in ['0' .. '9', ',', #8]) then Key := #0;
+end;
+
+procedure TFormNine.FormCreate(Sender: TObject);
+begin
+with ListBoxEd.Items do
+begin
+   Add('дюймы');
+   Add('футы');
+   Add('€рды');
+   Add('мили');
+end;
+ListBoxEd.ItemIndex := 1;
+end;
+
+procedure TFormNine.ListBoxEdClick(Sender: TObject);
+begin
+EditInput.SetFocus;
+end;
+
+end.
