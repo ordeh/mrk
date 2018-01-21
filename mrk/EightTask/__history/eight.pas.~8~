@@ -1,0 +1,72 @@
+unit eight;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TFormWeight = class(TForm)
+    LabelTask: TLabel;
+    LabelList: TLabel;
+    LabelWeight: TLabel;
+    LabelResult: TLabel;
+    ListBoxCountry: TListBox;
+    EditWeight: TEdit;
+    ButtonAccount: TButton;
+    ButtonHelp: TButton;
+    procedure ButtonAccountClick(Sender: TObject);
+    procedure ListBoxCountryClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormWeight: TFormWeight;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormWeight.ButtonAccountClick(Sender: TObject);
+var p, kg, k : real;
+begin
+case
+ ListBoxCountry.ItemIndex of
+  0 :k := 0.56001;
+  1 :k := 0.453592;
+  2..4, 6 :k := 0.5;
+  5 :k := 0.31762;
+  7 :k := 0.4059;
+end;
+ p := StrToFloat(EditWeight.Text);
+ kg := p * k;
+ LabelResult.Caption := EditWeight.Text + ' фунтов = ' +
+ FloatToStr(kg) + ' кг';
+end;
+
+procedure TFormWeight.FormCreate(Sender: TObject);
+begin
+with ListBoxCountry.Items do
+begin
+   Add('Австрия');
+   Add('Англия');
+   Add('Германия');
+   Add('Дания');
+   Add('Исландия');
+   Add('Италия');
+   Add('Нидерланды');
+   Add('Россия');
+end;
+end;
+
+procedure TFormWeight.ListBoxCountryClick(Sender: TObject);
+begin
+EditWeight.SetFocus;
+end;
+
+end.
