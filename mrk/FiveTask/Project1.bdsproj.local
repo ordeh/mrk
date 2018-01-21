@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018.01.21 13:44:08.055.pas,C:\Users\User\Documents\Borland Studio Projects\Unit2.pas=D:\projects\mrk\mrk\mrk\FiveTask\Five.pas</Transaction>
+    <Transaction>2018.01.21 13:44:08.055.dfm,C:\Users\User\Documents\Borland Studio Projects\Unit2.dfm=D:\projects\mrk\mrk\mrk\FiveTask\Five.dfm</Transaction>
+    <Transaction>2018.01.21 15:23:07.086.bdsproj,C:\Users\User\Documents\Borland Studio Projects\Project1.bdsproj=D:\projects\mrk\mrk\mrk\FiveTask\Project1.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>
