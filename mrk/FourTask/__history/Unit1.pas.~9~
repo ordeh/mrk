@@ -1,0 +1,77 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    GroupBox1: TGroupBox;
+    Label4: TLabel;
+    Label5: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+   // procedure Edit1KeyPress(Sender: TObject; var Key: Char);
+   // procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+function Mst(Sender: TObject):boolean;
+var p : string;
+begin
+Mst := False;
+with Sender as TEdit do begin
+p:= Text;
+if (p='')or(p='-')or(p=',')or(p='-,')or(p=',-')
+then Mst := True;
+end;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var a,b : real;
+    x : real;
+    mess: string;
+begin
+if Mst(Edit1) or Mst(Edit2)
+ then ShowMessage('Invalid data')
+ else begin
+ a := StrToFloat(Edit1.Text);
+ b := StrToFloat(Edit2.Text);
+ if x > 0 then begin
+ x:=(-b/a);
+
+
+    Label4.Caption:= FloatToStrF(x);
+ end
+  else if x <> 0 then begin
+     Label4.Caption:= 'x';
+ end;
+end;
+end;
+
+ procedure TForm1.Button2Click(Sender: TObject);
+begin
+   Close;
+end;
+
+
+end.

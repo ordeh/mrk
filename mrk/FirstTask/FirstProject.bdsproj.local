@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2018.01.19 23:36:31.109.pas,C:\Users\User\Documents\Borland Studio Projects\Unit1.pas=C:\Users\User\Desktop\Delphi\FirstTask.pas</Transaction>
+    <Transaction>2018.01.19 23:36:31.109.dfm,C:\Users\User\Documents\Borland Studio Projects\Unit1.dfm=C:\Users\User\Desktop\Delphi\FirstTask.dfm</Transaction>
+    <Transaction>2018.01.19 23:38:35.355.bdsproj,C:\Users\User\Documents\Borland Studio Projects\Project1.bdsproj=C:\Users\User\Desktop\Delphi\FirstTask\FirstProject.bdsproj</Transaction>
+    <Transaction>2018.01.19 23:38:56.098.pas,C:\Users\User\Desktop\Delphi\FirstTask.pas=C:\Users\User\Desktop\Delphi\FirstTask\FirstTask.pas</Transaction>
+    <Transaction>2018.01.19 23:38:56.098.dfm,C:\Users\User\Desktop\Delphi\FirstTask.dfm=C:\Users\User\Desktop\Delphi\FirstTask\FirstTask.dfm</Transaction>
+    <Transaction>2018.01.19 23:39:36.358.bdsproj,C:\Users\User\Desktop\Delphi\FirstTask\FirstProject.bdsproj=C:\Users\User\Desktop\Delphi\FirstTask\FirstProject.bdsproj</Transaction>
+  </Transactions>
+</BorlandProject>
