@@ -16,6 +16,7 @@ type
     ButtonConvert: TButton;
     ButtonHelp: TButton;
     LabelResult: TLabel;
+    procedure ListBoxEdClick(Sender: TObject);
     procedure EditInputKeyPress(Sender: TObject; var Key: Char);
     procedure EditInputKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
@@ -36,7 +37,7 @@ implementation
 {$R *.dfm}
 
 procedure TFormNine.ButtonConvertClick(Sender: TObject);
-var p, kg, k, k1, k2, k3, k4 : real;
+var p, kg, kgkm, kgkm, k1, k2, k3, k4 : real;
 begin
  case
  ListBoxEd.ItemIndex of
@@ -47,21 +48,33 @@ begin
 end;
  p := StrToFloat(EditInput.Text);
  if ListBoxEd.ItemIndex = 0 then
+ begin
  kg := p * k1;
-  LabelResult.Caption := EditInput.Text + ' дюймов = ' +
+ kgkm := p * (k1 / 100000);
+ kgm := p * (k1 / 100);
+ LabelResult.Caption := EditInput.Text + ' дюймов = ' +
+ FloatToStr(kgkm) + ' км ' +
+ FloatToStr(kgk) + ' м ' +
  FloatToStr(kg) + ' см';
-  if ListBoxEd.ItemIndex = 1 then
+ end;
+ if ListBoxEd.ItemIndex = 1 then
+ begin
  kg := p * k2;
-  LabelResult.Caption := EditInput.Text + ' футов = ' +
+ LabelResult.Caption := EditInput.Text + ' футов = ' +
  FloatToStr(kg) + ' см';
-   if ListBoxEd.ItemIndex = 2 then
+ end;
+ if ListBoxEd.ItemIndex = 2 then
+ begin
  kg := p * k3;
-  LabelResult.Caption := EditInput.Text + ' €рдов = ' +
+ LabelResult.Caption := EditInput.Text + ' €рдов = ' +
  FloatToStr(kg) + ' см';
-    if ListBoxEd.ItemIndex = 3 then
+ end;
+ if ListBoxEd.ItemIndex = 3 then
+ begin
  kg := p * k4;
  LabelResult.Caption := EditInput.Text + ' миль = ' +
  FloatToStr(kg) + ' см';
+ end;
  EditInput.SetFocus;
 end;
 
@@ -95,6 +108,11 @@ begin
    Add('мили');
 end;
 ListBoxEd.ItemIndex := 1;
+end;
+
+procedure TFormNine.ListBoxEdClick(Sender: TObject);
+begin
+EditInput.SetFocus;
 end;
 
 end.

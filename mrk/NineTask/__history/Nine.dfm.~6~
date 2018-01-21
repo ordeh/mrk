@@ -39,11 +39,10 @@ object FormNine: TFormNine
     WordWrap = True
   end
   object LabelResult: TLabel
-    Left = 8
-    Top = 176
-    Width = 248
-    Height = 33
-    AutoSize = False
+    Left = 56
+    Top = 184
+    Width = 3
+    Height = 13
     WordWrap = True
   end
   object EditInput: TEdit

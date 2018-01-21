@@ -49,32 +49,28 @@ end;
  p := StrToFloat(EditInput.Text);
  if ListBoxEd.ItemIndex = 0 then
  begin
-     kg := p * k1;
-  LabelResult.Caption := EditInput.Text + ' дюймов = ' +
+ kg := p * k1;
+ LabelResult.Caption := EditInput.Text + ' дюймов = ' +
  FloatToStr(kg) + ' см';
  end;
-
-  if ListBoxEd.ItemIndex = 1 then
-  begin
-    kg := p * k2;
-  LabelResult.Caption := EditInput.Text + ' футов = ' +
+ if ListBoxEd.ItemIndex = 1 then
+ begin
+ kg := p * k2;
+ LabelResult.Caption := EditInput.Text + ' футов = ' +
  FloatToStr(kg) + ' см';
-  end;
-
-   if ListBoxEd.ItemIndex = 2 then
-   begin
-       kg := p * k3;
-  LabelResult.Caption := EditInput.Text + ' €рдов = ' +
+ end;
+ if ListBoxEd.ItemIndex = 2 then
+ begin
+ kg := p * k3;
+ LabelResult.Caption := EditInput.Text + ' €рдов = ' +
  FloatToStr(kg) + ' см';
-      end;
-
-    if ListBoxEd.ItemIndex = 3 then
-    begin
-        kg := p * k4;
+ end;
+ if ListBoxEd.ItemIndex = 3 then
+ begin
+ kg := p * k4;
  LabelResult.Caption := EditInput.Text + ' миль = ' +
  FloatToStr(kg) + ' см';
-    end;
-
+ end;
  EditInput.SetFocus;
 end;
 
