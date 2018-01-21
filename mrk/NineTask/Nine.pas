@@ -88,6 +88,7 @@ end;
  FloatToStr(kg) + ' см';
  end;
  EditInput.SetFocus;
+ EditInput.Clear;
 end;
 
 procedure TFormNine.ButtonHelpClick(Sender: TObject);

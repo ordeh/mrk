@@ -37,7 +37,7 @@ implementation
 {$R *.dfm}
 
 procedure TFormNine.ButtonConvertClick(Sender: TObject);
-var p, kg, k, k1, k2, k3, k4 : real;
+var p, kg, kgm, kgkm, k1, k2, k3, k4 : real;
 begin
  case
  ListBoxEd.ItemIndex of
@@ -50,28 +50,43 @@ end;
  if ListBoxEd.ItemIndex = 0 then
  begin
  kg := p * k1;
+ kgkm := p * (k1 / 100000);
+ kgm := p * (k1 / 100);
  LabelResult.Caption := EditInput.Text + ' ה‏ילמג = ' +
-// FloatToStr(kg) + ' סל';
+ FloatToStr(kgkm) + ' ךל ' +
+ FloatToStr(kgm) + ' ל ' +
+ FloatToStr(kg) + ' סל';
  end;
  if ListBoxEd.ItemIndex = 1 then
  begin
  kg := p * k2;
+ kgkm := p * (k2 / 100000);
+ kgm := p * (k2 / 100);
  LabelResult.Caption := EditInput.Text + ' פףעמג = ' +
-// FloatToStr(kg) + ' סל';
+ FloatToStr(kgkm) + ' ךל ' +
+ FloatToStr(kgm) + ' ל ' +
+ FloatToStr(kg) + ' סל';
  end;
  if ListBoxEd.ItemIndex = 2 then
  begin
  kg := p * k3;
+ kgkm := p * (k3 / 100000);
+ kgm := p * (k3 / 100);
  LabelResult.Caption := EditInput.Text + ' ÿנהמג = ' +
-// FloatToStr(kg) + ' סל';
+ FloatToStr(kgkm) + ' ךל ' +
+ FloatToStr(kgm) + ' ל ' +
+ FloatToStr(kg) + ' סל';
  end;
  if ListBoxEd.ItemIndex = 3 then
  begin
  kg := p * k4;
+ kgkm := p * (k4 / 100000);
+ kgm := p * (k4 / 100);
  LabelResult.Caption := EditInput.Text + ' לטכü = ' +
-
- end;
+ FloatToStr(kgkm) + ' ךל ' +
+ FloatToStr(kgm) + ' ל ' +
  FloatToStr(kg) + ' סל';
+ end;
  EditInput.SetFocus;
 end;
 
