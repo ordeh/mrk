@@ -57,7 +57,7 @@ if Mst(Edit1) or Mst(Edit2)
  a := StrToFloat(Edit1.Text);
  b := StrToFloat(Edit2.Text);
  if x > 0 then begin
- x:=(-b/a);
+ x:=(b/a);
     Label4.Caption:= FloatToStrF(x, ffGeneral,4,2)+#13;
  end
   else if x <> 0 then begin
